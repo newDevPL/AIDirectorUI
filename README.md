@@ -48,7 +48,7 @@ bash start.sh
 ## Files
 
 - `run_model.py`: The main script that generates videos based on user prompts using the Zeroscope AI model.
-- `mergevideo.py`: A script that merges multiple videos into one.
+- `mergevideo.py`: A script that merges multiple videos and audio files from the output folder into one.
 - `setup_env.bat/setup_env.sh`: A script to set up the Python virtual environment and install required dependencies.
 - `start.bat/start.sh`: A script to start the Gradio interface.
 
