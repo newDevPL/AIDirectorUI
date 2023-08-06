@@ -1,4 +1,3 @@
-
 import os
 import torch
 from diffusers import DiffusionPipeline, DPMSolverMultistepScheduler
@@ -79,24 +78,24 @@ def generate_video(prompts=None, num_inference_steps=None, num_upscale_steps=Non
     return ", ".join(video_paths)
 
 inputs = [
-    Textbox(lines=5, label="Prompts (one per line)", placeholder="Enter prompts here, one per line. Use Shift+Enter to create a new line without submitting."),
-    Number(label="Number of Inference Steps"),
-    Number(label="Number of Upscale Steps"),
+    Textbox(lines=5, label="Prompts (one per line)", placeholder="Enter prompts here, one per line. Use Enter to create a new line without submitting. Press Shift+Enter to submit"),
+    Number(label="Number of Inference Steps (minimum recommended is 30)"),
+    Number(label="Number of Upscale Steps (minimum recommended is 2)"),
     Number(label="Height"),
     Number(label="Width"),
     Checkbox(label="Upscale"),
     Number(label="Upscaled Height"),
     Number(label="Upscaled Width"),
-    Number(label="Number of Frames"),
-    Slider(minimum=0, maximum=1, step=0.1, label="Strength"),
-    Textbox(label="Output Folder Path"),
+    Number(label="Number of Frames (minimum recommended: 24, fps is 8)"),
+    Slider(minimum=0, maximum=1, step=0.1, label="Strength (recommended: 1)"),
+    Textbox(label="Output Folder Path (if empty files are saved into the output folder)"),
     Textbox(label="Negative Prompt"),  # new input for negative_prompt
-    Number(label="Guidance Scale"),  # new input for guidance_scale
+    Number(label="Guidance Scale (recommended above 10)"),  # new input for guidance_scale
 ]
 
 iface = gr.Interface(fn=generate_video,
                      inputs=inputs,
                      outputs="text",
                      title="Video Generation",
-                     description="Generate videos using zeroscope models.")
+                     description="Generate videos using zeroscope models. All credit goes to Zeroscope team: https://huggingface.co/cerspense")
 iface.launch(debug=True)
