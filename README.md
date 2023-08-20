@@ -57,3 +57,5 @@ bash start.sh
 - When using the Gradio interface, you can enter multiple prompts, one per line. Press Shift+Enter to create a new line without submitting.
 - Videos will be saved in the output directory as `video1.mp4`, `video2.mp4`, etc.
 - You can use the following Google Colab if you don't have a GPU or prefer to use cloud computing: https://colab.research.google.com/drive/1tpcGri9uHT0-xxD9U2N_lDcZQwTODJt4#scrollTo=outvcWX55A2o
+
+If you like this project, consider donating some ETH: 0x202580B9639D6434316DBabcbadDE5a246468125
